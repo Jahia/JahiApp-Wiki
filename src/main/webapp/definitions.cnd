@@ -1,0 +1,8 @@
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+
+[jnt:wikiPage] > jnt:content, mix:title
+ - lastComment (string)
+ - text (string, richtext) i18n
+ + * (jnt:wikiPage)
+
+[jnt:wikiPageFormCreation] > jnt:content, jmix:siteComponentContent, mix:title
