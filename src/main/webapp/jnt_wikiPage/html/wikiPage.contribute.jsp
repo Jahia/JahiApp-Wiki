@@ -15,10 +15,10 @@
 <template:tokenizedForm>
     <form action="<c:url value='${url.base}${currentNode.path}'/>" method="post"
           id="jahia-wiki-article-delete-${currentNode.UUID}">
-        <input type="hidden" name="redirectTo" value="<c:url value='${url.base}${jcr:getParentOfType(renderContext.mainResource.node, "jnt:page").path}'/>"/>
-            <%-- Define the output format for the newly created node by default html or by redirectTo--%>
-        <input type="hidden" name="newNodeOutputFormat" value="html"/>
-        <input type="hidden" name="methodToCall" value="delete"/>
+        <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${jcr:getParentOfType(renderContext.mainResource.node, "jnt:page").path}'/>"/>
+            <%-- Define the output format for the newly created node by default html or by jcrRedirectTo--%>
+        <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
+        <input type="hidden" name="jcrMethodToCall" value="delete"/>
     </form>
 </template:tokenizedForm>
 <a class="wikipagedelete"  href="#" onclick="confirm('<fmt:message key="label.wikipage.delete.warning"><fmt:param value="${currentNode.properties['jcr:title'].string}"/></fmt:message>')?document.getElementById('jahia-wiki-article-delete-${currentNode.UUID}').submit():false;"><fmt:message key="label.wikipage.delete"/></a>
@@ -26,8 +26,8 @@
 
 <template:tokenizedForm>
 <form name="formWiki" class="formWiki" action="${currentNode.name}" method="post">
-    <input type="hidden" name="autoCheckin" value="true">
-    <input type="hidden" name="nodeType" value="jnt:wikiPage">
+    <input type="hidden" name="jcrAutoCheckin" value="true">
+    <input type="hidden" name="jcrNodeType" value="jnt:wikiPage">
     <label><fmt:message key="label.title"/></label><input type="text" name="jcr:title" value="${currentNode.properties['jcr:title'].string}"/>
     <script type="text/javascript">
             $(document).ready(function() {
