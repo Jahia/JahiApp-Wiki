@@ -29,7 +29,7 @@
                                 <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Welcome" />
                                 <pages j:skin="skins.box8" j:style="blue" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                                     <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Pages" />
-                                    <contentRetrieval field="jcr:title" j:classname="hilightList" j:criteria="jcr:lastModified" j:skin="skins.custom" j:sortDirection="asc" j:subNodesView="link" j:type="jnt:wikiPage" j:view="glossary" jcr:mixinTypes="jmix:renderable jmix:customSkin jmix:skinnable jmix:glossary" jcr:primaryType="jnt:contentRetrieval" maxItems="30">
+                                    <contentRetrieval field="jcr:title" j:classname="hilightList" j:criteria="jcr:lastModified" j:skin="skins.custom" j:sortDirection="asc" j:subNodesView="link" j:type="jnt:wikiPage" j:view="glossary" useMainResource="true" jcr:mixinTypes="jmix:renderable jmix:customSkin jmix:skinnable jmix:glossary" jcr:primaryType="jnt:contentRetrieval" maxItems="30">
                                         <j:translation_en j:noResultsMessage="no wiki pages created yet" jcr:language="en" jcr:primaryType="jnt:translation" />
                                     </contentRetrieval>
                                 </pages>
