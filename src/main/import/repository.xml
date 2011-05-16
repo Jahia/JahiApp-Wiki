@@ -51,7 +51,7 @@
                     <row-col2 jcr:primaryType="jnt:contentList">
                         <wiki-search j:skin="skins.box8" j:style="yellow" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Wiki search" />
-                            <simpleSearchForm jcr:primaryType="jnt:simpleSearchForm" result="/templateSets/wiki/search-result">
+                            <simpleSearchForm jcr:primaryType="jnt:simpleSearchForm" result="/templateSets/wiki/search-results">
                                 <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Search" />
                                 <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Recherche" />
                             </simpleSearchForm>
@@ -108,12 +108,12 @@
                         </backToParentPage>
                         <contentInfo categories="false" creationdate="true" creator="true" description="false" j:bindedComponent="/templateSets/wiki/templates/wiki-content/row-col1/tabularList/pagecontent/mainResourceDisplay" jcr:primaryType="jnt:displayMetadata" keywords="false" lastcontributor="true" lastmodification="true" />
                         <wiki-search j:skin="skins.box8" j:style="yellow" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
-                            <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Wiki search" />
-                            <search jcr:primaryType="jnt:simpleSearchForm" result="/templateSets/wiki/search-result">
+                            <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Search" />
+                            <search jcr:primaryType="jnt:simpleSearchForm" result="/templateSets/wiki/search-results">
                                 <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Search" />
                                 <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Recherche" />
                             </search>
-                            <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Recherche wiki" />
+                            <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Recherche" />
                         </wiki-search>
                     </row-col2>
                     <information jcr:primaryType="jnt:contentList">
@@ -130,16 +130,16 @@
                     </jahiapp-wiki-logo.png>
                 </files>
             </templates>
-            <search-result changefreq="monthly" j:templateNode="/templateSets/wiki/templates/wiki-searchResults" jcr:mixinTypes="jmix:sitemap" jcr:primaryType="jnt:page" priority="0.5">
-                <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Wiki Search Results" />
+            <search-results changefreq="monthly" j:templateNode="/templateSets/wiki/templates/wiki-searchResults" jcr:mixinTypes="jmix:sitemap" jcr:primaryType="jnt:page" priority="0.5">
+                <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Search Results" />
                 <pagecontent jcr:primaryType="jnt:contentList">
                     <search-results autoSuggest="true" autoSuggestHitCount="2" autoSuggestMinimumHitCount="2" jcr:primaryType="jnt:searchResults">
                         <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Search Results" />
                         <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Résultats de la recherche" />
                     </search-results>
                 </pagecontent>
-                <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Résultats de la recherche Wiki" />
-            </search-result>
+                <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Résultats de la recherche" />
+            </search-results>
         </wiki>
     </templateSets>
 </content>
