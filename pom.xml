@@ -46,6 +46,13 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <description>This is a custom module for running on a Jahia server.</description>
+
+    <scm>
+        <connection>scm:git:git@github.com:Jahia/JahiApp-Wiki.git</connection>
+        <url>scm:git:git@github.com:Jahia/JahiApp-Wiki.git</url>
+        <developerConnection>scm:git:git@github.com:Jahia/JahiApp-Wiki.git</developerConnection>
+    </scm>
+
     <repositories>
         <repository>
             <id>xwiki-releases</id>
