@@ -133,7 +133,7 @@
                 <pagecontent jcr:primaryType="jnt:contentList">
                     <predefined--rows-960gs column="1col16" jcr:primaryType="jnt:row" />
                 </pagecontent>
-                <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Résultats de la recherche" />
+                <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Résultats de recherche - Wiki" />
                 <predefined--rows-960gs-col1 jcr:primaryType="jnt:contentList">
                     <pagetitle jcr:primaryType="nt:pageTitle" />
                     <search-results autoSuggest="true" autoSuggestHitCount="2" autoSuggestMinimumHitCount="2" jcr:primaryType="jnt:searchResults">
