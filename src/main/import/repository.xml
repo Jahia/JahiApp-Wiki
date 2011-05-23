@@ -135,7 +135,7 @@
                 </pagecontent>
                 <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Résultats de la recherche" />
                 <predefined--rows-960gs-col1 jcr:primaryType="jnt:contentList">
-                    <pagetitle jcr:primaryType="comnt:pageTitle" />
+                    <pagetitle jcr:primaryType="nt:pageTitle" />
                     <search-results autoSuggest="true" autoSuggestHitCount="2" autoSuggestMinimumHitCount="2" jcr:primaryType="jnt:searchResults">
                         <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Search Results" />
                         <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Résultats de la recherche" />
