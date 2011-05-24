@@ -5,6 +5,8 @@
        xmlns:jnt="http://www.jahia.org/jahia/nt/1.0">
     <reader jcr:primaryType="jnt:role" j:permissions="/permissions/actions/wiki"/>
 
+    <jahiapp-user jcr:primaryType="jnt:role"  j:permissions="/permissions/actions/wiki"/>
+
     <editor-in-chief jcr:primaryType="jnt:role"
                      j:permissions="/permissions/actions/wiki"
                      j:privilegedAccess="true"
