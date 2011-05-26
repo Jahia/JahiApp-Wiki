@@ -38,7 +38,7 @@
                                     <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Pages" />
                                 </pages>
                             </welcome>
-                            <create-new-page j:requireLoggedUser="true" j:requirePrivilegedUser="false" j:requiredPermissions="" jcr:mixinTypes="jmix:requiredPermissions jmix:accessControlled" jcr:primaryType="jnt:contentList">
+                            <create-new-page j:requireLoggedUser="true" j:requirePrivilegedUser="false" j:requiredPermissions="/permissions/actions/wiki/editWikiContent" jcr:mixinTypes="jmix:requiredPermissions jmix:accessControlled" jcr:primaryType="jnt:contentList">
                                 <new-article j:requireLoggedUser="true" j:requiredMode="live" jcr:mixinTypes="jmix:requiredPermissions" jcr:primaryType="jnt:wikiPageFormCreation">
                                     <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="New Article" />
                                     <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Nouvel Article" />
