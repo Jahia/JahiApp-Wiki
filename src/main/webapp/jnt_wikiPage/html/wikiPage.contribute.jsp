@@ -11,7 +11,7 @@
 <template:addResources type="javascript" resources="markitupWikiSet.js"/>
 
 <h2>${currentNode.properties["jcr:title"].string}</h2>
-<c:if test="${jcr:hasPermission(currentNode,'jcr:removeNode')}">
+<c:if test="${jcr:hasPermission(currentNode,'removeWikiContent')}">
 <template:tokenizedForm>
     <form action="<c:url value='${url.base}${currentNode.path}'/>" method="post"
           id="jahia-wiki-article-delete-${currentNode.UUID}">

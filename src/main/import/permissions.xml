@@ -6,6 +6,7 @@
     <actions jcr:primaryType="jnt:permission">
         <wiki jcr:primaryType="jnt:permission">
             <editWikiContent jcr:primaryType="jnt:permission"/>
+            <removeWikiContent jcr:primaryType="jnt:permission"/>
             <viewWikiHistory jcr:primaryType="jnt:permission"/>
         </wiki>
     </actions>

@@ -3,7 +3,7 @@
        xmlns:jcr="http://www.jcp.org/jcr/1.0"
        xmlns:j="http://www.jahia.org/jahia/1.0"
        xmlns:jnt="http://www.jahia.org/jahia/nt/1.0">
-    <jahiapp-user jcr:primaryType="jnt:role"  j:permissions="/permissions/actions/wiki"/>
+    <jahiapp-user jcr:primaryType="jnt:role"  j:permissions="/permissions/actions/wiki/editWikiContent /permissions/actions/wiki/viewWikiHistory"/>
 
     <editor-in-chief jcr:primaryType="jnt:role"
                      j:permissions="/permissions/actions/wiki"
