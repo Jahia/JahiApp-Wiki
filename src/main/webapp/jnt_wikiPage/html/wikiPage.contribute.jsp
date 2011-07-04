@@ -6,7 +6,7 @@
 <template:addResources type="css" resources="wiki.css"/>
 <template:addResources type="css" resources="markitupStyle.css"/>
 <template:addResources type="css" resources="markitupWikiStyle.css"/>
-<template:addResources type="javascript" resources="jquery.js"/>
+<template:addResources type="javascript" resources="jquery.min.js"/>
 <template:addResources type="javascript" resources="jquery.markitup.js"/>
 <template:addResources type="javascript" resources="markitupWikiSet.js"/>
 
