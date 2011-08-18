@@ -59,6 +59,6 @@
                 name="lastComment" id="comment-${currentNode.identifier}"/>
 
         </p>
-        <input class="button" type="submit" value="<fmt:message key="label.submit"/>"/>
+        <input class="button" type="submit" value="<fmt:message key='label.submit'/>"/>
     </form>
 </template:tokenizedForm>
