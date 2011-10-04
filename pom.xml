@@ -215,6 +215,7 @@
                             <package-name>${project.name}</package-name>
                             <depends>Default Jahia Templates,Jahia Content retrieval</depends>
                             <root-folder>${project.artifactId}</root-folder>
+                            <module-type>jahiapp</module-type>
                         </manifestEntries>
                     </archive>
 	                <archiveClasses>true</archiveClasses>
