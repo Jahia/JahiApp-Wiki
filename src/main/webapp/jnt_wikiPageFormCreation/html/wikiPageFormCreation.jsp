@@ -31,6 +31,7 @@
     <form name="formWiki" class="formWiki" method="post" action="<c:url value='${url.base}${pageNode.path}/*'/>">
         <input type="hidden" name="jcrAutoCheckin" value="true">
         <input type="hidden" name="jcrNodeType" value="jnt:wikiPage">
+        <input type="hidden" name="jcrAutoAssignRole" value="owner">
         <c:choose>
             <c:when test="${not empty param.newPageName}">
                 <input type="hidden" name="jcrNodeName" value="${pageName}">
