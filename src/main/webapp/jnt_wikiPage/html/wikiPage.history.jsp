@@ -54,9 +54,8 @@
             <c:if test="${not empty param[pagesizeid]}">
                 <c:set var="pageSize" value="${param[pagesizeid]}"/>
             </c:if>
-            <template:initPager totalSize="${listTotalSize}" pageSize="25" id="${currentNode.identifier}"/>
-            <c:forEach items="${currentList}" var="version" varStatus="status" begin="${moduleMap.begin}" end="${moduleMap.end}" >
-                <c:if test="${status.count != 1}">
+            <template:initPager totalSize="${listTotalSize - 1}" pageSize="25" id="${currentNode.identifier}"/>
+            <c:forEach items="${currentList}" var="version" varStatus="status" begin="${moduleMap.begin + 1}" end="${moduleMap.end +1}" >
                     <c:choose>
                         <c:when test="${status.count % 2 == 0}">
                             <tr class="odd">
@@ -78,7 +77,6 @@
                             value="${version.properties['jcr:lastModified'].date.time}"
                             dateStyle="short" type="both"/></td>
                     </tr>
-                </c:if>
             </c:forEach>
             </tbody>
         </table>
