@@ -80,7 +80,7 @@
                             <modify j:requiredPermissions="/permissions/actions/wiki/editWikiContent" j:style="blue" jcr:mixinTypes="jmix:style jmix:requiredPermissions jmix:accessControlled" jcr:primaryType="jnt:contentList">
                                 <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Modify" />
                                 <mainResourceDisplay j:mainResourceView="contribute" jcr:primaryType="jnt:mainResourceDisplay" />
-                                <upload-image j:skin="skins.box8" j:style="mushroom" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
+                                <upload-image j:channelIncludeOrExclude="exclude" j:channelSelection="generic_mobile apple_ipad_ver1" j:skin="skins.box8" j:style="mushroom" jcr:mixinTypes="jmix:channelSelection jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                                     <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Manage files" />
                                     <fileUpload j:bindedComponent="/templateSets/wiki/templates/wiki-content/row-col1/tabularList/modify/upload-image/fileList" jcr:primaryType="jnt:fileUpload" />
                                     <fileList j:view="wikiSelect" jcr:mixinTypes="jmix:renderable" jcr:primaryType="jnt:fileList" />
