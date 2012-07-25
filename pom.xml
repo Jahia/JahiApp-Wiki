@@ -219,7 +219,7 @@
                             <Specification-Version>${project.version}</Specification-Version>
                             <Specification-Vendor>${jahia.manifest.vendor.name}</Specification-Vendor>
                             <package-name>${project.name}</package-name>
-                            <depends>Default Jahia Templates,Jahia Content retrieval</depends>
+                            <depends>Default Jahia Templates,Jahia Content retrieval,tabularList</depends>
                             <root-folder>${project.artifactId}</root-folder>
                             <module-type>jahiapp</module-type>
                         </manifestEntries>
