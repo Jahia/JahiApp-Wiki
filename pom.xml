@@ -62,6 +62,11 @@
 
     <repositories>
         <repository>
+            <id>jahiaRepository</id>
+            <name>Jahia's Maven Repository</name>
+            <url>http://maven.jahia.org/maven2</url>
+        </repository>
+        <repository>
             <id>xwiki-releases</id>
             <name>XWiki Maven2 Remote Repository for Releases</name>
             <url>http://maven.xwiki.org/releases</url>
@@ -73,6 +78,14 @@
             </snapshots>
         </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jahiaRepository</id>
+            <name>Jahia's Maven Repository</name>
+            <url>http://maven.jahia.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+    
     <dependencies>
         <!-- XWiki dependencies -->
         <dependency>
