@@ -241,7 +241,9 @@
 					block = openWith + replaceWith + closeWith;
 				} else if (selection === '' && placeHolder !== '') {
 					block = openWith + placeHolder + closeWith;
-				} else {
+                } else if (string.substr(0,openWith.length)==openWith && string.substr(-closeWith.length)==closeWith) {
+                    block = block.substr(openWith.length, string.length-openWith.length-closeWith.length);
+                } else {
 					string = string || selection;						
 					if (string.match(/ $/)) {
 						block = openWith + string.replace(/ $/, '') + closeWith + ' ';
