@@ -52,7 +52,7 @@
                         <wiki-search j:skin="skins.box8" j:style="yellow" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Wiki search" />
                             <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Recherche Wiki" />
-                            <wiki-search includeChildren="true" jcr:primaryType="jnt:customSearchForm" nodeType="jnt:wikiPage" pathType="currentpage" result="/templateSets/wiki/wiki-search-results">
+                            <wiki-search jcr:primaryType="jnt:customSearchForm" nodeType="jnt:wikiPage" pathType="currentpage" result="/templateSets/wiki/wiki-search-results">
                                 <j:translation_en jcr:language="en" jcr:primaryType="jnt:translation" jcr:title="Wiki Search" />
                             </wiki-search>
                         </wiki-search>
@@ -109,7 +109,7 @@
                         <wiki-search j:skin="skins.box8" j:style="yellow" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
                             <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Wiki Search" />
                             <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Recherche Wiki" />
-                            <wiki-search includeChildren="true" jcr:primaryType="jnt:customSearchForm" nodeType="jnt:wikiPage" pathType="currentpage" result="/templateSets/wiki/wiki-search-results">
+                            <wiki-search jcr:primaryType="jnt:customSearchForm" nodeType="jnt:wikiPage" pathType="currentpage" result="/templateSets/wiki/wiki-search-results">
                                 <j:translation_en jcr:language="en" jcr:primaryType="jnt:translation" jcr:title="Wiki Search" />
                             </wiki-search>
                         </wiki-search>
