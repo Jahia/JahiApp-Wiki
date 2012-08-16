@@ -48,11 +48,9 @@ import org.jahia.services.render.filter.RenderChain;
 import org.xwiki.rendering.syntax.SyntaxFactory;
 
 /**
- * Created by IntelliJ IDEA.
  * User: toto
  * Date: Dec 2, 2009
  * Time: 5:24:00 PM
- * To change this template use File | Settings | File Templates.
  */
 public class WikiFilter extends AbstractFilter {
 
