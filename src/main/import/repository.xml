@@ -84,7 +84,7 @@
                                     <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Manage files" />
                                     <fileUpload j:bindedComponent="/templateSets/wiki/templates/wiki-content/row-col1/tabularList/modify/upload-image/fileList" jcr:primaryType="jnt:fileUpload" />
                                     <fileList j:view="wikiSelect" jcr:mixinTypes="jmix:renderable" jcr:primaryType="jnt:fileList" />
-                                    <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Gérer les fichiers" />
+                                    <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Ressources" />
                                 </upload-image>
                                 <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Modifier" />
                             </modify>
