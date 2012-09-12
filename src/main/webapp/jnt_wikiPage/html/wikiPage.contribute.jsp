@@ -21,7 +21,7 @@
         <input type="hidden" name="jcrMethodToCall" value="delete"/>
     </form>
 </template:tokenizedForm>
-<a class="wikipagedelete"  href="#" onclick="confirm('<fmt:message key="label.wikipage.delete.warning"><fmt:param value="${currentNode.properties['jcr:title'].string}"/></fmt:message>')?document.getElementById('jahia-wiki-article-delete-${currentNode.UUID}').submit():false;"><fmt:message key="label.wikipage.delete"/></a>
+<a class="wikipagedelete"  href="#" onclick="confirm('<fmt:message key="label.wikipage.delete.warning"><fmt:param value="${currentNode.displayableName}"/></fmt:message>')?document.getElementById('jahia-wiki-article-delete-${currentNode.UUID}').submit():false;"><fmt:message key="label.wikipage.delete"/></a>
 </c:if>
 
 <template:tokenizedForm>
