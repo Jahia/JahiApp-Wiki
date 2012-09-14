@@ -4,13 +4,7 @@
         <wiki j:installedModules="wiki" j:siteType="jahiapp" j:title="JahiApp - Wiki" j:wcagCompliance="true" jcr:primaryType="jnt:virtualsite">
             <home j:templateNode="/templateSets/wiki/templates/wiki" jcr:primaryType="jnt:page" />
             <contents jcr:primaryType="jnt:contentFolder" />
-            <files jcr:primaryType="jnt:folder">
-                <jahiapp-wiki.png j:height="50" j:width="116" jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
-                    <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource" />
-                    <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource" />
-                    <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource" />
-                </jahiapp-wiki.png>
-            </files>
+            <files jcr:primaryType="jnt:folder"/>
             <portlets jcr:primaryType="jnt:portletFolder" />
             <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
                 <wiki jcr:primaryType="jnt:pageTemplate">
