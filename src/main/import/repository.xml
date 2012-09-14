@@ -114,13 +114,7 @@
                 </wiki-content>
                 <wiki-searchResults j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate" />
                 <contents jcr:primaryType="jnt:contentFolder" />
-                <files jcr:primaryType="jnt:folder">
-                    <jahiapp-wiki-logo.png j:height="60" j:width="116" jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
-                        <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource" />
-                        <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource" />
-                        <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource" />
-                    </jahiapp-wiki-logo.png>
-                </files>
+                <files jcr:primaryType="jnt:folder"/>
             </templates>
             <wiki-search-results j:templateNode="/templateSets/wiki/templates/wiki-searchResults" jcr:primaryType="jnt:page">
                 <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Wiki Search Results" />
