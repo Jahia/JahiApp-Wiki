@@ -1,77 +1,77 @@
 /******************************************************************************
 * WIKI form
 ******************************************************************************/
-.bodywrapper .formWiki {
+ .formWiki {
 	margin:1em 0;
 }
-.bodywrapper .formWiki p{
+ .formWiki p{
 	margin:0.5em 0;
 	padding:0;
 }
-.bodywrapper .formWiki fieldset {
+ .formWiki fieldset {
 	border:none	
 }
-.bodywrapper .formWiki legend {
+ .formWiki legend {
 	display:none	
 }
-.bodywrapper .formWiki label {
+ .formWiki label {
 display:block
 }
-.bodywrapper .formWiki input, .bodywrapper .formWiki textarea {
+ .formWiki input,  .formWiki textarea {
 	width:98%;
 	clear:both
 }
-.bodywrapper .formWiki input.button{
+ .formWiki input.button{
 	width:auto
 }
 /******************************************************************************
 * WIKI Search
 ******************************************************************************/
-.bodywrapper #wikisearch p{
+ #wikisearch p{
 	margin:0;
 	padding:0;
 }
-.bodywrapper #wikisearch fieldset {
+ #wikisearch fieldset {
 	padding:0 ;
 	border:none;
 }
-.bodywrapper #wikisearch .search{
+ #wikisearch .search{
 	width:90%
 }
 /******************************************************************************
 * WIKI textarea
 ******************************************************************************/
-.bodywrapper.textareawiki {
+.textareawiki {
 	width:90%
 }
 
 /******************************************************************************
 * special Links
 ******************************************************************************/
-.bodywrapper  a.external{
+  a.external{
 	padding:0 13px 0 0;
 	background:transparent url(img/external.png) no-repeat scroll right center;
 }
-.bodywrapper  a.wikidef{
+  a.wikidef{
 	padding:0 13px 0 0;
 	background:transparent url(img/wikidef.png) no-repeat scroll right center;
 }
-.bodywrapper  a.wikidef-new{
+  a.wikidef-new{
 	padding:0 13px 0 0;
 	background:transparent url(img/wikidef-new.png) no-repeat scroll right center;
 }
-.bodywrapper a.wikidef-new:link, .bodywrapper a.wikidef-new:visited {
+ a.wikidef-new:link,  a.wikidef-new:visited {
     color:red;
 }
 /******************************************************************************
 * listwiki Arrow
 ******************************************************************************/
-.bodywrapper ul.listwiki  {
+ ul.listwiki  {
 	margin:5px 0;
 	position:relative;
 	list-style:none;
 }
-.bodywrapper .listwiki li {
+ .listwiki li {
 	background: url(img/wiki-arrow.png) no-repeat 0 5px;
 	padding:0 0 0 12px;
 	clear:left;
@@ -80,65 +80,65 @@ display:block
 /******************************************************************************
 *  boxwiki
 ******************************************************************************/
-.bodywrapper div.boxwiki {
+ div.boxwiki {
 	position:relative;
 	clear:both;
 }
 
-.bodywrapper div.boxwiki h3.boxwikititleh3 {
+ div.boxwiki h3.boxwikititleh3 {
 	margin:0;
 	padding:0;
 	display:inline
 }
-.bodywrapper div.boxwiki-inner {
+ div.boxwiki-inner {
 	background-color:#fff;
 	border:1px solid #cecece;
 	height:1%;
 
 }
-.bodywrapper div.boxwiki-inner p {
+ div.boxwiki-inner p {
 	padding:0px 0px 10px 0px;
 }
-.bodywrapper .boxwiki-inner .boxwiki-inner-border {
+ .boxwiki-inner .boxwiki-inner-border {
 	border:1px solid #fff;
 	height:1%;
 	background-color:#fff;
 }
 /*boxwikishadow*/
-.bodywrapper div.boxwikishadow {
+ div.boxwikishadow {
 	border:1px solid #cecece;
 }
 
-.bodywrapper div.boxwikishadow div.boxwiki-inner {
+ div.boxwikishadow div.boxwiki-inner {
 	background-color:#fff;
 	border:1px solid #cecece;
 	margin:-2px 0 0 -2px;
 }
 /*boxwiki color*/
-.bodywrapper .boxwikigrey .boxwiki-inner .boxwiki-inner-border {
+ .boxwikigrey .boxwiki-inner .boxwiki-inner-border {
 	background-color:#e1e1e1
 }
-.bodywrapper .boxwikiyellow .boxwiki-inner .boxwiki-inner-border {
+ .boxwikiyellow .boxwiki-inner .boxwiki-inner-border {
 	background-color:#FCF0BA
 }
-.bodywrapper .boxwikiwhite .boxwiki-inner {
+ .boxwikiwhite .boxwiki-inner {
 	background-color:#fff
 }
-.bodywrapper .boxwikiwhite .boxwiki-inner .boxwiki-inner-border {
+ .boxwikiwhite .boxwiki-inner .boxwiki-inner-border {
 	background-color:#fff
 }
 
 /*boxwiki padding*/
-.bodywrapper .boxwikipadding16 .boxwiki-inner .boxwiki-inner-border {
+ .boxwikipadding16 .boxwiki-inner .boxwiki-inner-border {
 	padding:16px;
 }
 
 /*boxwiki margin*/
-.bodywrapper .boxwikimarginbottom16{
+ .boxwikimarginbottom16{
 	margin-bottom:16px;
 }
 /*boxwiki title*/
-.bodywrapper h4.boxwiki-title {
+ h4.boxwiki-title {
 	background:#666666 url(img/boxwiki-h4title.png) repeat-x top right;
 	border:1px solid #666666;
 	color:#fff;
@@ -154,7 +154,7 @@ display:block
 /******************************************************************************
 * Menu simple
 ******************************************************************************/
-.bodywrapper ul#menuwiki  {
+ ul#menuwiki  {
 	list-style:none;
 	margin:0;
 	padding:0;
@@ -163,7 +163,7 @@ display:block
 	background:#efefef;
 	border-bottom:1px solid #CCCCCC;
 }
-.bodywrapper ul#menuwiki  li{
+ ul#menuwiki  li{
 	list-style:none;
 	margin:0;
 	padding:0;
@@ -171,8 +171,8 @@ display:block
 }
 
 /*Links*/
-.bodywrapper ul#menuwiki a,
-.bodywrapper ul#menuwiki a:visited {
+ ul#menuwiki a,
+ ul#menuwiki a:visited {
 	text-decoration:none;
 	padding:5px;
 	display:block;
@@ -180,13 +180,13 @@ display:block
 	height:1%
 }
 
-.bodywrapper ul#menuwiki ul.submenu a:hover{
+ ul#menuwiki ul.submenu a:hover{
 	background-color:#BBDDEE; 
 	color:#333;
 }
 
 
-.bodywrapper ul#menuwiki .menuwikitop{
+ ul#menuwiki .menuwikitop{
 	border:1px solid #CECECE;
 	border-width:0 1px;
 	overflow:hidden;
@@ -194,14 +194,14 @@ display:block
 }
 
 /*Header Links*/
-.bodywrapper ul#menuwiki .menuwikitop a{
+ ul#menuwiki .menuwikitop a{
 	margin:0 0 1px 0;
 	border-top:1px solid white;
 }
-.bodywrapper ul#menuwiki ul.submenu a{
+ ul#menuwiki ul.submenu a{
 	border-top:none;
 }
-.bodywrapper ul#menuwiki ul.submenu {
+ ul#menuwiki ul.submenu {
 	border-top:1px solid #CCCCCC;
 	border-bottom:1px solid #CCCCCC;
 	width:100%;
@@ -211,11 +211,11 @@ display:block
 }
 
 /*Header Link Hover*/
-.bodywrapper ul#menuwiki .menuwikitop a:hover{
+ ul#menuwiki .menuwikitop a:hover{
 	color:#333;
 }
 
-.bodywrapper a.wikipagedelete {
+ a.wikipagedelete {
 	background:url(img/wikipage-delete.png) no-repeat scroll 0 50% transparent;
 	clear:both;
 	display:inline;
