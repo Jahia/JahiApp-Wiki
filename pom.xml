@@ -38,7 +38,8 @@
     If you are unsure which license is appropriate for your use,
     please contact the sales department at sales@jahia.com.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>jahia-modules</artifactId>
@@ -49,11 +50,9 @@
     <artifactId>wiki</artifactId>
     <name>Jahia Wiki</name>
     <version>2.0.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>bundle</packaging>
     <description>This is a custom module for running on a Jahia server.</description>
-    <properties>
-        <maven3.site.plugin.version>3.0</maven3.site.plugin.version>
-    </properties>
+
     <scm>
         <connection>scm:git:git@github.com:Jahia/JahiApp-Wiki.git</connection>
         <url>scm:git:git@github.com:Jahia/JahiApp-Wiki.git</url>
@@ -85,21 +84,6 @@
             </snapshots>
         </repository>
     </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>jahia-public</id>
-            <name>Jahia Public Repository</name>
-            <url>https://devtools.jahia.com/nexus/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 
     <dependencies>
         <!-- XWiki dependencies -->
@@ -108,10 +92,10 @@
             <artifactId>xwiki-core-rendering-parser-wikimodel</artifactId>
             <version>2.0.4</version>
             <exclusions>
-            	<exclusion>
-            		<groupId>org.hibernate</groupId>
-            		<artifactId>hibernate-validator</artifactId>
-            	</exclusion>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-validator</artifactId>
+                </exclusion>
                 <exclusion>
                     <groupId>dom4j</groupId>
                     <artifactId>dom4j</artifactId>
@@ -164,44 +148,33 @@
             </exclusions>
         </dependency>
         <dependency>
-			<groupId>xerces</groupId>
-			<artifactId>xercesImpl</artifactId>
-			<version>2.4.0</version>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.4.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>1.8.2</version>
-			<scope>provided</scope>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.8.2</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.4</version>
-			<scope>provided</scope>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
-			<scope>provided</scope>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+            <scope>provided</scope>
         </dependency>
         <!-- End of XWiki dependencies -->
     </dependencies>
+
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>${maven3.site.plugin.version}</version>
-                    <configuration>
-                        <relativizeDecorationLinks>true</relativizeDecorationLinks>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
@@ -215,50 +188,14 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>classes</classifier>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
                 <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <warSourceExcludes>resources/*.properties</warSourceExcludes>
-                    <webResources>
-                        <resource>
-                          <directory>${project.build.directory}/native2ascii</directory>
-                          <targetPath>resources</targetPath>
-                        </resource>
-                    </webResources>
-                    <archive>
-                        <manifestEntries>
-                            <Implementation-Title>${project.name}</Implementation-Title>
-                            <Implementation-Version>${project.version}</Implementation-Version>
-                            <Implementation-Vendor>${jahia.manifest.vendor.name}</Implementation-Vendor>
-                            <Implementation-Vendor-Id>${jahia.manifest.vendor.id}</Implementation-Vendor-Id>
-                            <Implementation-URL>${jahia.manifest.vendor.url}</Implementation-URL>
-                            <Specification-Title>${project.name}</Specification-Title>
-                            <Specification-Version>${project.version}</Specification-Version>
-                            <Specification-Vendor>${jahia.manifest.vendor.name}</Specification-Vendor>
-                            <package-name>${project.name}</package-name>
-                            <depends>default,contentRetrieval,tabularList,grid,search,skins,default-skins,channels</depends>
-                            <root-folder>${project.artifactId}</root-folder>
-                            <module-type>jahiapp</module-type>
-                        </manifestEntries>
-                    </archive>
-	                <archiveClasses>true</archiveClasses>
+                    <instructions>
+                        <Jahia-Depends>default,contentRetrieval,tabularList,grid,search,skins,default-skins,channels</Jahia-Depends>
+                        <Jahia-Module-Type>jahiapp</Jahia-Module-Type>
+                    </instructions>
                 </configuration>
             </plugin>
         </plugins>

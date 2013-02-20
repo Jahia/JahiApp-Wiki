@@ -1,0 +1,224 @@
+/******************************************************************************
+* WIKI form
+******************************************************************************/
+ .formWiki {
+	margin:1em 0;
+}
+ .formWiki p{
+	margin:0.5em 0;
+	padding:0;
+}
+ .formWiki fieldset {
+	border:none	
+}
+ .formWiki legend {
+	display:none	
+}
+ .formWiki label {
+display:block
+}
+ .formWiki input,  .formWiki textarea {
+	width:98%;
+	clear:both
+}
+ .formWiki input.button{
+	width:auto
+}
+/******************************************************************************
+* WIKI Search
+******************************************************************************/
+ #wikisearch p{
+	margin:0;
+	padding:0;
+}
+ #wikisearch fieldset {
+	padding:0 ;
+	border:none;
+}
+ #wikisearch .search{
+	width:90%
+}
+/******************************************************************************
+* WIKI textarea
+******************************************************************************/
+.textareawiki {
+	width:90%
+}
+
+/******************************************************************************
+* special Links
+******************************************************************************/
+  a.external{
+	padding:0 13px 0 0;
+	background:transparent url(img/external.png) no-repeat scroll right center;
+}
+  a.wikidef{
+	padding:0 13px 0 0;
+	background:transparent url(img/wikidef.png) no-repeat scroll right center;
+}
+  a.wikidef-new{
+	padding:0 13px 0 0;
+	background:transparent url(img/wikidef-new.png) no-repeat scroll right center;
+}
+ a.wikidef-new:link,  a.wikidef-new:visited {
+    color:red;
+}
+/******************************************************************************
+* listwiki Arrow
+******************************************************************************/
+ ul.listwiki  {
+	margin:5px 0;
+	position:relative;
+	list-style:none;
+}
+ .listwiki li {
+	background: url(img/wiki-arrow.png) no-repeat 0 5px;
+	padding:0 0 0 12px;
+	clear:left;
+	list-style:none;
+}
+/******************************************************************************
+*  boxwiki
+******************************************************************************/
+ div.boxwiki {
+	position:relative;
+	clear:both;
+}
+
+ div.boxwiki h3.boxwikititleh3 {
+	margin:0;
+	padding:0;
+	display:inline
+}
+ div.boxwiki-inner {
+	background-color:#fff;
+	border:1px solid #cecece;
+	height:1%;
+
+}
+ div.boxwiki-inner p {
+	padding:0px 0px 10px 0px;
+}
+ .boxwiki-inner .boxwiki-inner-border {
+	border:1px solid #fff;
+	height:1%;
+	background-color:#fff;
+}
+/*boxwikishadow*/
+ div.boxwikishadow {
+	border:1px solid #cecece;
+}
+
+ div.boxwikishadow div.boxwiki-inner {
+	background-color:#fff;
+	border:1px solid #cecece;
+	margin:-2px 0 0 -2px;
+}
+/*boxwiki color*/
+ .boxwikigrey .boxwiki-inner .boxwiki-inner-border {
+	background-color:#e1e1e1
+}
+ .boxwikiyellow .boxwiki-inner .boxwiki-inner-border {
+	background-color:#FCF0BA
+}
+ .boxwikiwhite .boxwiki-inner {
+	background-color:#fff
+}
+ .boxwikiwhite .boxwiki-inner .boxwiki-inner-border {
+	background-color:#fff
+}
+
+/*boxwiki padding*/
+ .boxwikipadding16 .boxwiki-inner .boxwiki-inner-border {
+	padding:16px;
+}
+
+/*boxwiki margin*/
+ .boxwikimarginbottom16{
+	margin-bottom:16px;
+}
+/*boxwiki title*/
+ h4.boxwiki-title {
+	background:#666666 url(img/boxwiki-h4title.png) repeat-x top right;
+	border:1px solid #666666;
+	color:#fff;
+	font-size:1.3em;
+	margin-left:0;
+	padding:5px;
+	text-align:center;
+	font-weight:normal;
+	clear:both;
+	margin:0;
+}
+
+/******************************************************************************
+* Menu simple
+******************************************************************************/
+ ul#menuwiki  {
+	list-style:none;
+	margin:0;
+	padding:0;
+	text-align:left;
+	margin-bottom:10px;
+	background:#efefef;
+	border-bottom:1px solid #CCCCCC;
+}
+ ul#menuwiki  li{
+	list-style:none;
+	margin:0;
+	padding:0;
+	height:1%
+}
+
+/*Links*/
+ ul#menuwiki a,
+ ul#menuwiki a:visited {
+	text-decoration:none;
+	padding:5px;
+	display:block;
+	background:none;
+	height:1%
+}
+
+ ul#menuwiki ul.submenu a:hover{
+	background-color:#BBDDEE; 
+	color:#333;
+}
+
+
+ ul#menuwiki .menuwikitop{
+	border:1px solid #CECECE;
+	border-width:0 1px;
+	overflow:hidden;
+	background:#dddddd;
+}
+
+/*Header Links*/
+ ul#menuwiki .menuwikitop a{
+	margin:0 0 1px 0;
+	border-top:1px solid white;
+}
+ ul#menuwiki ul.submenu a{
+	border-top:none;
+}
+ ul#menuwiki ul.submenu {
+	border-top:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+	width:100%;
+	margin:0;
+	padding:0;
+	background-color:#efefef
+}
+
+/*Header Link Hover*/
+ ul#menuwiki .menuwikitop a:hover{
+	color:#333;
+}
+
+ a.wikipagedelete {
+	background:url(img/wikipage-delete.png) no-repeat scroll 0 50% transparent;
+	clear:both;
+	display:inline;
+	margin-right:8px;
+	padding-left:20px;
+}
