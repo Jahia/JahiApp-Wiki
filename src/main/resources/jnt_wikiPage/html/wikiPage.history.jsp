@@ -16,7 +16,7 @@
 <template:addResources type="css" resources="wiki.css"/>
 
 <div id="${currentNode.UUID}-history">
-    <h2>${currentNode.properties["jcr:title"].string}</h2>
+    <h2><c:out value="${currentNode.properties['jcr:title'].string}" /></h2>
     <form name="diff" method="get" >
         <c:forEach items="${param}" var="p">
             <c:if test="${p.key ne 'diff' and p.key ne 'oldid'}">
@@ -71,7 +71,7 @@
                         &nbsp;<input type="radio" value="${version.parent.name}" name="diff"
                                id="w-diff-${version.parent.name}" <c:if test="${status.first}">disabled="true"</c:if> <c:if test="${param.diff eq version.parent.name}">checked="true"</c:if>/>
                     </td>
-                    <td headers="Title"><a href="#">${version.properties['lastComment'].string} </a></td>
+                    <td headers="Title"><a href="#"><c:out value="${version.properties['lastComment'].string}" /> </a></td>
                     <td headers="Author">${version.properties['jcr:lastModifiedBy'].string}</td>
                     <td headers="Date"><fmt:formatDate
                             value="${version.properties['jcr:lastModified'].date.time}"
