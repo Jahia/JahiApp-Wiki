@@ -2,7 +2,6 @@
 <content xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:jnt="http://www.jahia.org/jahia/nt/1.0" xmlns:jmix="http://www.jahia.org/jahia/mix/1.0" xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:sv="http://www.jcp.org/jcr/sv/1.0" >
     <templateSets jcr:primaryType="jnt:templateSets">
         <wiki j:installedModules="wiki" j:siteType="jahiapp" j:title="JahiApp - Wiki" j:wcagCompliance="true" jcr:primaryType="jnt:virtualsite">
-            <home j:templateNode="/templateSets/wiki/templates/wiki" jcr:primaryType="jnt:page" />
             <contents jcr:primaryType="jnt:contentFolder" />
             <files jcr:primaryType="jnt:folder"/>
             <portlets jcr:primaryType="jnt:portletFolder" />
