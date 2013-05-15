@@ -48,7 +48,7 @@
     <groupId>org.jahia.modules</groupId>
     <artifactId>wiki</artifactId>
     <name>Jahia Wiki</name>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.5</version>
     <packaging>war</packaging>
     <description>This is a custom module for running on a Jahia server.</description>
     <properties>
