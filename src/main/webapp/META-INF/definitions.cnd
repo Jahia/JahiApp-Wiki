@@ -3,7 +3,7 @@
 [jnt:wikiPage] > jnt:content, mix:title, jmix:retrievableContent, jmix:studioOnly
  - jcr:title (string)
  - lastComment (string)
- - wikiContent (string, richtext)
+ - wikiContent (string)
  + * (jnt:wikiPage)
  + * (jnt:file)
 
