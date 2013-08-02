@@ -18,4 +18,13 @@
     <bean name="NewWikiPageHandler" class="org.jahia.modules.wiki.errors.NewWikiPageHandler">
         <property name="urlResolverFactory" ref="urlResolverFactory" />
     </bean>
+
+    <bean name="wikiUrlInterceptor" parent="propertyInterceptorRegistrator">
+        <property name="propertyInterceptor">
+            <bean class="org.jahia.modules.wiki.WikiURLInterceptor">
+                <property name="syntaxFactory" ref="defaultSyntaxFactory"/>
+                <property name="inputSyntax" value="xwiki/2.0"/>
+            </bean>
+        </property>
+    </bean>
 </beans>

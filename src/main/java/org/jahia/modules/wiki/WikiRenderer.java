@@ -46,6 +46,7 @@ import org.jahia.services.render.RenderContext;
 import org.xwiki.component.descriptor.DefaultComponentDescriptor;
 import org.xwiki.component.embed.EmbeddableComponentManager;
 import org.xwiki.component.manager.ComponentManager;
+import org.xwiki.component.manager.ComponentRepositoryException;
 import org.xwiki.rendering.block.XDOM;
 import org.xwiki.rendering.parser.Parser;
 import org.xwiki.rendering.renderer.BlockRenderer;
@@ -71,7 +72,8 @@ public class WikiRenderer {
      * @param classLoader
      * @return
      */
-    private static ComponentManager getComponentManager(ClassLoader classLoader) throws Exception {
+    public static ComponentManager getComponentManager(ClassLoader classLoader) throws ComponentRepositoryException {
+
         if (componentManager == null) {
             componentManager = new EmbeddableComponentManager();
             componentManager.initialize(classLoader);
