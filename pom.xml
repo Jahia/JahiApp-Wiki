@@ -192,7 +192,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Import-Package>*,junit.framework;resolution:=optional,${jahia.plugin.projectPackageImport}</Import-Package>
+                        <Import-Package>junit.framework;resolution:=optional,${jahia.plugin.projectPackageImport},*</Import-Package>
                         <Jahia-Depends>default,contentRetrieval,tabularList,grid,search,skins,default-skins,channels</Jahia-Depends>
                         <Jahia-Module-Type>jahiapp</Jahia-Module-Type>
                     </instructions>
