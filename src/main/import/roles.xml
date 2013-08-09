@@ -5,9 +5,11 @@
        xmlns:jnt="http://www.jahia.org/jahia/nt/1.0">
     <jahiapp-user jcr:primaryType="jnt:role"  j:permissions="/permissions/actions/wiki/editWikiContent /permissions/actions/wiki/viewWikiHistory"/>
 
-    <editor-in-chief jcr:primaryType="jnt:role"
+    <editor jcr:primaryType="jnt:role">
+        <editor-in-chief jcr:primaryType="jnt:role"
                      j:permissions="/permissions/actions/wiki"
                      j:privilegedAccess="true"
             />
+    </editor>
 
 </roles>
