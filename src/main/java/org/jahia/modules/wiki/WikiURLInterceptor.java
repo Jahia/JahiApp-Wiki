@@ -34,7 +34,6 @@ import static org.jahia.api.Constants.JAHIA_REFERENCE_IN_FIELD_PREFIX;
 
 public class WikiURLInterceptor implements PropertyInterceptor , InitializingBean {
     private static final String DOC_CONTEXT_PLACEHOLDER = "##doc-context##/";
-    private static final String CMS_CONTEXT_PLACEHOLDER = "##cms-context##/";
 
     private SyntaxFactory syntaxFactory;
     private String inputSyntax;
@@ -149,7 +148,7 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
 
     public Value afterGetValue(JCRPropertyWrapper property, Value storedValue) throws ValueFormatException, RepositoryException {
         String content = storedValue.getString();
-        if (content == null || !content.contains(DOC_CONTEXT_PLACEHOLDER) && !content.contains(CMS_CONTEXT_PLACEHOLDER)) {
+        if (content == null || !content.contains(DOC_CONTEXT_PLACEHOLDER)) {
             return storedValue;
         }
 
@@ -196,11 +195,11 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
             br.render(xdom.getRoot(), p);
             result = p.toString();
         } catch (ComponentRepositoryException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            logger.error("Cannot parse wiki content",e);
         } catch (ComponentLookupException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            logger.error("Cannot parse wiki content",e);
         } catch (ParseException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            logger.error("Cannot parse wiki content",e);
         }
 
 
@@ -222,11 +221,9 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
         }
 
         String pathPart = originalValue;
-        final boolean isCmsContext;
         if (pathPart.startsWith(dmsContext)) {
             // Remove DOC context part
             pathPart = StringUtils.substringAfter(StringUtils.substringAfter(pathPart, dmsContext), "/");
-            isCmsContext = false;
         } else {
             return originalValue;
         }
@@ -291,12 +288,10 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
         if (logger.isDebugEnabled()) {
             logger.debug("Before replacePlaceholdersByRefs : "+originalValue);
         }
-        final boolean isCmsContext;
 
         if (pathPart.startsWith(DOC_CONTEXT_PLACEHOLDER)) {
             // Remove DOC context part
             pathPart = StringUtils.substringAfter(StringUtils.substringAfter(pathPart, DOC_CONTEXT_PLACEHOLDER), "/");
-            isCmsContext = false;
         } else {
             return originalValue;
         }
