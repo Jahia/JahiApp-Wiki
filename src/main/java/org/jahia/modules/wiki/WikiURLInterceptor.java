@@ -104,11 +104,11 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
             br.render(xdom.getRoot(), p);
             result = p.toString();
         } catch (ComponentRepositoryException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            logger.error("Cannot parse wiki content",e);
         } catch (ComponentLookupException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            logger.error("Cannot parse wiki content",e);
         } catch (ParseException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            logger.error("Cannot parse wiki content",e);
         }
 
         if (!newRefs.equals(refs)) {
