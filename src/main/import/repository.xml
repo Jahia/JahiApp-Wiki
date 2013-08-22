@@ -31,8 +31,8 @@
                                     <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Pages" />
                                 </pages>
                             </welcome>
-                            <create-new-page j:requirePrivilegedUser="false" j:requiredPermissions="/permissions/actions/wiki/editWikiContent" jcr:mixinTypes="jmix:requiredPermissions jmix:accessControlled" jcr:primaryType="jnt:contentList">
-                                <new-article j:requiredMode="live" jcr:mixinTypes="jmix:requiredPermissions" j:requiredPermissions="/permissions/actions/wiki/editWikiContent" jcr:primaryType="jnt:wikiPageFormCreation">
+                            <create-new-page j:requirePrivilegedUser="false" j:requiredPermissionNames="editWikiContent" jcr:mixinTypes="jmix:requiredPermissions jmix:accessControlled" jcr:primaryType="jnt:contentList">
+                                <new-article j:requiredMode="live" jcr:mixinTypes="jmix:requiredPermissions" j:requiredPermissionNames="editWikiContent" jcr:primaryType="jnt:wikiPageFormCreation">
                                     <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="New Article" />
                                     <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Nouvel Article" />
                                 </new-article>
@@ -70,7 +70,7 @@
                                 <mainResourceDisplay j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay" />
                                 <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Contenu" />
                             </pagecontent>
-                            <modify j:requiredPermissions="/permissions/actions/wiki/editWikiContent" j:style="blue" jcr:mixinTypes="jmix:style jmix:requiredPermissions jmix:accessControlled" jcr:primaryType="jnt:contentList">
+                            <modify j:requiredPermissionNames="editWikiContent" j:style="blue" jcr:mixinTypes="jmix:style jmix:requiredPermissions jmix:accessControlled" jcr:primaryType="jnt:contentList">
                                 <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Modify" />
                                 <mainResourceDisplay j:mainResourceView="contribute" jcr:primaryType="jnt:mainResourceDisplay" />
                                 <upload-image j:channelIncludeOrExclude="exclude" j:channelSelection="generic_mobile apple_ipad_ver1" j:skin="skins.box8" j:style="mushroom" jcr:mixinTypes="jmix:channelSelection jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
@@ -81,7 +81,7 @@
                                 </upload-image>
                                 <j:translation_fr jcr:language="fr" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="Modifier" />
                             </modify>
-                            <history j:requiredPermissions="/permissions/actions/wiki/viewWikiHistory" j:style="blue" jcr:mixinTypes="jmix:style jmix:requiredPermissions jmix:accessControlled" jcr:primaryType="jnt:contentList">
+                            <history j:requiredPermissionNames="viewWikiHistory" j:style="blue" jcr:mixinTypes="jmix:style jmix:requiredPermissions jmix:accessControlled" jcr:primaryType="jnt:contentList">
                                 <j:translation_en jcr:language="en" jcr:mixinTypes="mix:title" jcr:primaryType="jnt:translation" jcr:title="History" />
                                 <history j:mainResourceView="history" jcr:primaryType="jnt:mainResourceDisplay" />
                                 <compare-results j:skin="skins.box6" j:style="blue" jcr:mixinTypes="jmix:skinnable jmix:style" jcr:primaryType="jnt:contentList">
