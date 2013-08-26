@@ -94,7 +94,7 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
             for (ImageBlock imageBlock : l) {
                 final String url = imageBlock.getImage().getName();
                 if (url.startsWith(Jahia.getContextPath() + "/files/")) {
-                    String newUrl = replaceRefsByPlaceholders(url, newRefs, refs, "live");
+                    String newUrl = replaceRefsByPlaceholders(url, newRefs, refs, node.getSession().getWorkspace().getName());
                     imageBlock.getParent().replaceChild(new ImageBlock(new URLImage(newUrl), imageBlock.isFreeStandingURI(), imageBlock.getParameters()), imageBlock);
                 }
             }
