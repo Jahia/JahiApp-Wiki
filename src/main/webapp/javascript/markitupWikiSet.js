@@ -21,7 +21,7 @@ mySettings = {
             {name:'Second level list', openWith:'(!(** |!|**)!)'},
             {name:'Third level list', openWith:'(!(*** |!|**)!)'}
         ]},
-        {name:'Link', key:"L", openWith:"[[[![Link]!]", closeWith:']]'},
+        {name:'Link', key:"L", openWith:"[[", closeWith:'>>[![Link]!]]]'},
         {separator:'---------------' },
         {name:'Quotes', openWith:'(!(> |!|>)!)', placeHolder:''},
         {name:'Script', dropMenu: [
