@@ -7,8 +7,8 @@
         <property name="priority" value="90"/>
         <property name="description" value="Filter that handles wiki syntax"/>
         <property name="syntaxFactory" ref="defaultSyntaxFactory"/>
-        <property name="inputSyntax" value="xwiki/2.0"/>
-        <property name="outputSyntax" value="xhtml/1.0"/>
+        <property name="inputSyntax" value="${wikiInputSyntax:xwiki/2.0}"/>
+        <property name="outputSyntax" value="${wikiOutputSyntax:xhtml/1.0}"/>
         <property name="applyOnNodeTypes" value="jnt:wikiPage"/>
         <property name="applyOnTemplates" value="syntax"/>
     </bean>
@@ -23,7 +23,7 @@
         <property name="propertyInterceptor">
             <bean class="org.jahia.modules.wiki.WikiURLInterceptor">
                 <property name="syntaxFactory" ref="defaultSyntaxFactory"/>
-                <property name="inputSyntax" value="xwiki/2.0"/>
+                <property name="inputSyntax" value="${wikiInputSyntax:xwiki/2.0}"/>
             </bean>
         </property>
     </bean>
