@@ -41,24 +41,24 @@
 package org.jahia.modules.wiki.errors;
 
 import org.apache.commons.lang.StringUtils;
-import org.jahia.services.render.URLResolverFactory;
-import org.slf4j.Logger;
 import org.jahia.bin.errors.ErrorHandler;
 import org.jahia.services.content.JCRContentUtils;
 import org.jahia.services.content.JCRNodeWrapper;
 import org.jahia.services.content.JCRSessionFactory;
 import org.jahia.services.content.JCRSessionWrapper;
+import org.jahia.services.query.QueryResultWrapper;
+import org.jahia.services.query.QueryWrapper;
 import org.jahia.services.render.URLResolver;
+import org.jahia.services.render.URLResolverFactory;
+import org.slf4j.Logger;
 
-import javax.jcr.Node;
-import javax.jcr.NodeIterator;
 import javax.jcr.PathNotFoundException;
+import javax.jcr.query.Query;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
-import java.util.List;
 
 /**
  * Wiki page creation handler.
@@ -97,9 +97,11 @@ public class NewWikiPageHandler implements ErrorHandler {
                 }
                 // test if pageNode is wiki
                 boolean isWiki = false;
-                if (pageNode != null && pageNode.hasProperty("j:templateNode")) {
-                    NodeIterator iterator = JCRContentUtils.getDescendantNodes((JCRNodeWrapper) pageNode.getProperty("j:templateNode").getNode(), "jnt:wikiPageFormCreation");
-                    if (iterator.hasNext()) {
+                if (pageNode != null && pageNode.hasProperty("j:templateName")) {
+                    String query = "select * from [jnt:pageTemplate] where [j:nodename]='" + pageNode.getPropertyAsString("j:templateName") + "'";
+                    QueryWrapper q = session.getWorkspace().getQueryManager().createQuery(query, Query.JCR_SQL2);
+                    QueryResultWrapper result = q.execute();
+                    if(result.getNodes().hasNext() && JCRContentUtils.getDescendantNodes((JCRNodeWrapper) result.getNodes().next(), "jnt:wikiPageFormCreation").hasNext()) {
                         isWiki = true;
                     }
 
