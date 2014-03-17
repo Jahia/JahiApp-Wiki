@@ -144,11 +144,11 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
             br.render(xdom.getRoot(), p);
             result = p.toString();
         } catch (ComponentRepositoryException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            logger.error("Error before setting value", e);
         } catch (ComponentLookupException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            logger.error("Error before setting value", e);
         } catch (ParseException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            logger.error("Error before setting value", e);
         }
 
         if (!newRefs.equals(refs)) {
@@ -273,8 +273,6 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
         return JCRTemplate.getInstance().doExecuteWithSystemSession(null, workspace, null, new JCRCallback<String>() {
             public String doInJCR(JCRSessionWrapper session) throws RepositoryException {
                 String value = originalValue;
-                String ext = null;
-                String tpl = null;
                 JCRNodeWrapper reference;
                 try {
                     String currentPath = path;
@@ -307,12 +305,6 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
                 }
                 Long index = newRefs.get(id);
                 String link = "/##ref:link" + index + "##";
-                if (tpl != null) {
-                    link += "." + tpl;
-                }
-                if (ext != null) {
-                    link += "." + ext;
-                }
                 value = WebUtils.urlDecode(value).replace(path, link);
                 if (logger.isDebugEnabled()) {
                     logger.debug("After replaceRefsByPlaceholders : "+value);
