@@ -22,7 +22,6 @@
     <bean name="wikiUrlInterceptor" parent="propertyInterceptorRegistrator">
         <property name="propertyInterceptor">
             <bean class="org.jahia.modules.wiki.WikiURLInterceptor">
-                <property name="syntaxFactory" ref="defaultSyntaxFactory"/>
                 <property name="inputSyntax" value="${wikiInputSyntax:xwiki/2.0}"/>
             </bean>
         </property>

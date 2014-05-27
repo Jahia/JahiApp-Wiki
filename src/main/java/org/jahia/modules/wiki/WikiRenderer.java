@@ -72,6 +72,8 @@ package org.jahia.modules.wiki;
 import java.io.StringReader;
 
 import org.jahia.services.render.RenderContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xwiki.component.descriptor.DefaultComponentDescriptor;
 import org.xwiki.component.embed.EmbeddableComponentManager;
 import org.xwiki.component.manager.ComponentManager;
@@ -86,14 +88,39 @@ import org.xwiki.rendering.syntax.SyntaxFactory;
 import org.xwiki.rendering.transformation.TransformationManager;
 
 /**
- * User: ktlili
- * Date: Dec 4, 2009
- * Time: 3:13:47 PM
+ * @auther ktlili
  */
 public class WikiRenderer {
-    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(WikiRenderer.class);
-    private static EmbeddableComponentManager componentManager;
+    private static class Holder {
+        static final EmbeddableComponentManager COMPONENT_MANAGER;
+        
+        static {
+            COMPONENT_MANAGER = new EmbeddableComponentManager();
+            COMPONENT_MANAGER.initialize(Thread.currentThread().getContextClassLoader());
+            // register use our linkRenderer as  default link renderer
+            DefaultComponentDescriptor<XHTMLLinkRenderer> componentDescriptor = new DefaultComponentDescriptor<XHTMLLinkRenderer>();
+            componentDescriptor.setRole(XHTMLLinkRenderer.class);
+            componentDescriptor.setImplementation(CustomXHTMLLinkRenderer.class);
+            componentDescriptor.setRoleHint("default");
+            try {
+                COMPONENT_MANAGER.registerComponent(componentDescriptor);
+            } catch (ComponentRepositoryException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
 
+    private static final Logger logger = LoggerFactory.getLogger(WikiRenderer.class);
+
+    
+    /**
+     * Get a singleton instance of the component manager.
+     *
+     * @return a singleton instance of the component manager
+     */
+    public static ComponentManager getComponentManager() {
+        return Holder.COMPONENT_MANAGER;
+    }
 
     /**
      * Get componentManager. If null, created a new one
@@ -102,20 +129,7 @@ public class WikiRenderer {
      * @return
      */
     public static ComponentManager getComponentManager(ClassLoader classLoader) throws ComponentRepositoryException {
-
-        if (componentManager == null) {
-            componentManager = new EmbeddableComponentManager();
-            componentManager.initialize(classLoader);
-            // register use our linkRenderer as  default link renderer
-            DefaultComponentDescriptor<XHTMLLinkRenderer> componentDescriptor = new DefaultComponentDescriptor<XHTMLLinkRenderer>();
-            componentDescriptor.setRole(XHTMLLinkRenderer.class);
-            componentDescriptor.setImplementation(CustomXHTMLLinkRenderer.class);
-            componentDescriptor.setRoleHint("default");
-            componentManager.registerComponent(componentDescriptor);
-
-
-        }
-        return componentManager;
+        return getComponentManager();
 
     }
 
@@ -129,7 +143,7 @@ public class WikiRenderer {
     public static String renderWikiSyntaxAsXHTML(RenderContext renderContext, String html, SyntaxFactory syntaxFactory, String inputSyntax, String outputSyntax) throws Exception {
         logger.debug("Wiki content before processing: " + html);
         // Initialize Rendering components and allow getting instances
-        ComponentManager componentManager = getComponentManager(syntaxFactory.getClass().getClassLoader());
+        ComponentManager componentManager = getComponentManager();
 
         // update the renderContext
         CustomXHTMLLinkRenderer linkRenderer = (CustomXHTMLLinkRenderer) componentManager.lookup(XHTMLLinkRenderer.class);

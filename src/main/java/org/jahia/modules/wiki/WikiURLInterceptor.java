@@ -79,7 +79,6 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 import org.xwiki.component.manager.ComponentLookupException;
 import org.xwiki.component.manager.ComponentManager;
-import org.xwiki.component.manager.ComponentRepositoryException;
 import org.xwiki.rendering.block.ImageBlock;
 import org.xwiki.rendering.block.XDOM;
 import org.xwiki.rendering.listener.URLImage;
@@ -87,7 +86,6 @@ import org.xwiki.rendering.parser.ParseException;
 import org.xwiki.rendering.parser.Parser;
 import org.xwiki.rendering.renderer.BlockRenderer;
 import org.xwiki.rendering.renderer.printer.DefaultWikiPrinter;
-import org.xwiki.rendering.syntax.SyntaxFactory;
 
 import javax.jcr.*;
 import javax.jcr.lock.LockException;
@@ -104,7 +102,6 @@ import static org.jahia.api.Constants.JAHIA_REFERENCE_IN_FIELD_PREFIX;
 public class WikiURLInterceptor implements PropertyInterceptor , InitializingBean {
     private static final String DOC_CONTEXT_PLACEHOLDER = "##doc-context##/";
 
-    private SyntaxFactory syntaxFactory;
     private String inputSyntax;
 
     private String dmsContext;
@@ -156,7 +153,7 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
         String result = content;
 
         try {
-            ComponentManager componentManager = WikiRenderer.getComponentManager(syntaxFactory.getClass().getClassLoader());
+            ComponentManager componentManager = WikiRenderer.getComponentManager();
             Parser parser = componentManager.lookup(Parser.class, inputSyntax);
             XDOM xdom = parser.parse(new StringReader(content));
             List<ImageBlock> l = xdom.getChildrenByType(ImageBlock.class, true);
@@ -172,7 +169,7 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
             DefaultWikiPrinter p = new DefaultWikiPrinter();
             br.render(xdom.getRoot(), p);
             result = p.toString();
-        } catch (ComponentRepositoryException e) {
+        } catch (RuntimeException e) {
             logger.error("Error before setting value", e);
         } catch (ComponentLookupException e) {
             logger.error("Error before setting value", e);
@@ -244,7 +241,7 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
         String result = content;
 
         try {
-            ComponentManager componentManager = WikiRenderer.getComponentManager(syntaxFactory.getClass().getClassLoader());
+            ComponentManager componentManager = WikiRenderer.getComponentManager();
             Parser parser = componentManager.lookup(Parser.class, inputSyntax);
             XDOM xdom = parser.parse(new StringReader(content));
             List<ImageBlock> l = xdom.getChildrenByType(ImageBlock.class, true);
@@ -263,7 +260,7 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
             DefaultWikiPrinter p = new DefaultWikiPrinter();
             br.render(xdom.getRoot(), p);
             result = p.toString();
-        } catch (ComponentRepositoryException e) {
+        } catch (RuntimeException e) {
             logger.error("Cannot parse wiki content",e);
         } catch (ComponentLookupException e) {
             logger.error("Cannot parse wiki content",e);
@@ -395,10 +392,6 @@ public class WikiURLInterceptor implements PropertyInterceptor , InitializingBea
 
 
 
-
-    public void setSyntaxFactory(SyntaxFactory syntaxFactory) {
-        this.syntaxFactory = syntaxFactory;
-    }
 
     public void setInputSyntax(String inputSyntax) {
         this.inputSyntax = inputSyntax;
