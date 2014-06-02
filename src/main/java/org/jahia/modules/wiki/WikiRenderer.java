@@ -96,7 +96,7 @@ public class WikiRenderer {
         
         static {
             COMPONENT_MANAGER = new EmbeddableComponentManager();
-            COMPONENT_MANAGER.initialize(Thread.currentThread().getContextClassLoader());
+            COMPONENT_MANAGER.initialize(WikiRenderer.class.getClassLoader());
             // register use our linkRenderer as  default link renderer
             DefaultComponentDescriptor<XHTMLLinkRenderer> componentDescriptor = new DefaultComponentDescriptor<XHTMLLinkRenderer>();
             componentDescriptor.setRole(XHTMLLinkRenderer.class);
