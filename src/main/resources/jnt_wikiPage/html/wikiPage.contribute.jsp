@@ -28,9 +28,11 @@
 </c:if>
 
 <template:tokenizedForm>
-<form name="formWiki" class="formWiki" action="${currentNode.name}" method="post">
+<form name="formWiki" class="formWiki" action="<c:url value='${url.base}${currentNode.path}'/>" method="post">
     <input type="hidden" name="jcrAutoCheckin" value="true">
-    <input type="hidden" name="jcrNodeType" value="jnt:wikiPage">
+    <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>"/>
+    <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
+    <input type="hidden" name="jcrMethodToCall" value="put"/>
     <label><fmt:message key="label.title"/></label><input type="text" name="jcr:title" value="<c:out value="${currentNode.properties['jcr:title'].string}" />"/>
     <script type="text/javascript">
             $(document).ready(function() {
