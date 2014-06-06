@@ -27,7 +27,7 @@
 <a class="wikipagedelete"  href="#" onclick="confirm('<fmt:message key="label.wikipage.delete.warning"><fmt:param value="${currentDisplayName}"/></fmt:message>')?document.getElementById('jahia-wiki-article-delete-${currentNode.UUID}').submit():false;"><fmt:message key="label.wikipage.delete"/></a>
 </c:if>
 
-<template:tokenizedForm>
+<template:tokenizedForm disableXSSFiltering="true">
 <form name="formWiki" class="formWiki" action="<c:url value='${url.base}${currentNode.path}'/>" method="post">
     <input type="hidden" name="jcrAutoCheckin" value="true">
     <input type="hidden" name="jcrRedirectTo" value="<c:url value='${url.base}${renderContext.mainResource.node.path}'/>"/>
