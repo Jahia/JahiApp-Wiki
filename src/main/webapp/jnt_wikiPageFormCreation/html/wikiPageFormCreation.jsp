@@ -27,7 +27,7 @@
 <c:if test="${jcr:isNodeType(renderContext.mainResource.node,'jnt:wikiPage')}">
     <c:set var="pageNode" value="${renderContext.mainResource.node}"/>
 </c:if>
-<template:tokenizedForm>
+<template:tokenizedForm disableXSSFiltering="true">
     <form name="formWiki" class="formWiki" method="post" action="<c:url value='${url.base}${pageNode.path}/*'/>">
         <input type="hidden" name="jcrAutoCheckin" value="true">
         <input type="hidden" name="jcrNodeType" value="jnt:wikiPage">

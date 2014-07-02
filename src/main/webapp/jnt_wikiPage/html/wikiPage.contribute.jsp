@@ -27,7 +27,7 @@
 <a class="wikipagedelete"  href="#" onclick="confirm('<fmt:message key="label.wikipage.delete.warning"><fmt:param value="${currentDisplayName}"/></fmt:message>')?document.getElementById('jahia-wiki-article-delete-${currentNode.UUID}').submit():false;"><fmt:message key="label.wikipage.delete"/></a>
 </c:if>
 
-<template:tokenizedForm>
+<template:tokenizedForm disableXSSFiltering="true">
 <form name="formWiki" class="formWiki" action="${currentNode.name}" method="post">
     <input type="hidden" name="jcrAutoCheckin" value="true">
     <input type="hidden" name="jcrNodeType" value="jnt:wikiPage">
@@ -40,7 +40,7 @@
 
             });
     </script>
-    <textarea class="textareawiki" name="wikiContent" id="text-${currentNode.identifier}" rows="30" cols="85">${currentNode.properties['wikiContent'].string}</textarea>
+    <textarea class="textareawiki" name="wikiContent" id="text-${currentNode.identifier}" rows="30" cols="85"><c:out value="${currentNode.properties['wikiContent'].string}"/></textarea>
 
     <p>
         <label><fmt:message key="jnt_wiki.addComment"/>: </label> <input name="lastComment" value=""/>
