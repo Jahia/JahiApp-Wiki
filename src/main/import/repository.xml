@@ -4,7 +4,7 @@
         <wiki j:dependencies="channels contentRetrieval default default-skins grid search skins tabularList"
             j:installedModules="wiki"
             j:modulePriority="0"
-            j:moduleType="jahiapp"
+            j:moduleType="module"
             j:title="JahiApp - Wiki"
             jcr:primaryType="jnt:module">
                 
