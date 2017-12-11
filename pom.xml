@@ -190,6 +190,8 @@
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
+        <!-- We override the plugin version because of default packages in jdom dependency. With the newer plugin version the build fails. -->
+        <version>2.4.0</version>
         <extensions>true</extensions>
         <configuration>
           <instructions>
