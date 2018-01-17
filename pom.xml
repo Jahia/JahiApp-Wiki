@@ -77,6 +77,18 @@
           <artifactId>dom4j</artifactId>
           <groupId>dom4j</groupId>
         </exclusion>
+        <exclusion>
+          <artifactId>javacc</artifactId>
+          <groupId>net.java.dev.javacc</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>htmlcleaner</artifactId>
+          <groupId>net.sourceforge.htmlcleaner</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jdom</artifactId>
+          <groupId>org.jdom</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
