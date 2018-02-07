@@ -49,7 +49,7 @@
   <parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>jahia-modules</artifactId>
-    <version>7.2.0.0</version>
+    <version>7.2.2.0</version>
   </parent>
   <groupId>org.jahia.modules</groupId>
   <artifactId>wiki</artifactId>
@@ -76,6 +76,18 @@
         <exclusion>
           <artifactId>dom4j</artifactId>
           <groupId>dom4j</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>javacc</artifactId>
+          <groupId>net.java.dev.javacc</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>htmlcleaner</artifactId>
+          <groupId>net.sourceforge.htmlcleaner</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jdom</artifactId>
+          <groupId>org.jdom</groupId>
         </exclusion>
       </exclusions>
     </dependency>
