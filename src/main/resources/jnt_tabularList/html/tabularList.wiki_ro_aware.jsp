@@ -32,7 +32,7 @@
     <div class="idTabsContainer"><!--start idTabsContainer-->
         <ul class="idTabs">
             <c:forEach items="${jcr:getChildrenOfType(currentNode, jcr:getConstraints(currentNode))}" var="subList" varStatus="status">
-                <c:if test="${renderContext.readOnlyStatus eq 'OFF' || subList.name ne 'create-new-page'}">
+                <c:if test="${renderContext.readOnlyStatus eq 'OFF' || (subList.name ne 'create-new-page' && subList.name ne 'modify')}">   
                     <c:if test="${status.first || displayTab eq subList.name}">
                         <c:set var="displayList" value="${subList}"/>
                     </c:if>

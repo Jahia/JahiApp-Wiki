@@ -176,7 +176,9 @@
                             <row column="2col124" jcr:primaryType="jnt:row"/>
                         </pagecontent>
                         <row-col1 jcr:primaryType="jnt:contentList">
-                            <tabularList jcr:primaryType="jnt:tabularList">
+                            <tabularList j:view="wiki_ro_aware"
+                               jcr:mixinTypes="jmix:renderable"
+                               jcr:primaryType="jnt:tabularList">
                                 <pagecontent j:style="blue"
                                   jcr:mixinTypes="jmix:style"
                                   jcr:primaryType="jnt:contentList">
