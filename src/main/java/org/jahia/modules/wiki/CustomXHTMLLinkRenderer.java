@@ -207,10 +207,10 @@ public class CustomXHTMLLinkRenderer implements XHTMLLinkRenderer, Initializable
     public void beginLink(Link link, boolean isFreeStandingURI, Map<String, String> parameters) {
         linkref = link.getReference();
         // For files or reference, we don't create new node
-        if (!link.getReference().startsWith("/") && !link.getReference().startsWith("http://")) {
+        if (!link.getReference().startsWith("/") && !link.getReference().startsWith("http://") && !link.getReference().startsWith("https://")) {
             link.setReference(JCRContentUtils.generateNodeName(link.getReference(), 32));
         }
-        if (link.getReference().startsWith("http://")) {
+        if (link.getReference().startsWith("http://") || link.getReference().startsWith("https://")) {
             beginExternalLink(link, isFreeStandingURI, parameters);
         } else {
             beginInternalLink(link, isFreeStandingURI, parameters);
