@@ -1,11 +1,11 @@
-/**
+/*
  * ==========================================================================================
  * =                   JAHIA'S DUAL LICENSING - IMPORTANT INFORMATION                       =
  * ==========================================================================================
  *
  *                                 http://www.jahia.com
  *
- *     Copyright (C) 2002-2018 Jahia Solutions Group SA. All rights reserved.
+ *     Copyright (C) 2002-2019 Jahia Solutions Group SA. All rights reserved.
  *
  *     THIS FILE IS AVAILABLE UNDER TWO DIFFERENT LICENSES:
  *     1/GPL OR 2/JSEL
@@ -207,10 +207,10 @@ public class CustomXHTMLLinkRenderer implements XHTMLLinkRenderer, Initializable
     public void beginLink(Link link, boolean isFreeStandingURI, Map<String, String> parameters) {
         linkref = link.getReference();
         // For files or reference, we don't create new node
-        if (linkref != null && !linkref.startsWith("/") && !linkref.startsWith("http://")) {
+        if (linkref != null && !linkref.startsWith("/") && !linkref.startsWith("http://") && !linkref.startsWith("https://")) {
             link.setReference(JCRContentUtils.generateNodeName(link.getReference(), 32));
         }
-        if (linkref != null && linkref.startsWith("http://")) {
+        if (linkref != null && (linkref.startsWith("http://") || linkref.startsWith("https://"))) {
             beginExternalLink(link, isFreeStandingURI, parameters);
         } else {
             beginInternalLink(link, isFreeStandingURI, parameters);
