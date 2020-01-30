@@ -49,11 +49,11 @@
   <parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>jahia-modules</artifactId>
-    <version>7.2.2.0</version>
+    <version>7.5.0.0-SNAPSHOT</version>
   </parent>
   <groupId>org.jahia.modules</groupId>
   <artifactId>wiki</artifactId>
-  <version>2.1.4-SNAPSHOT</version>
+  <version>3.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Jahia Wiki</name>
   <description>This is a custom module for running on a Jahia server.</description>
@@ -209,6 +209,7 @@
           <instructions>
             <Import-Package>junit.framework;resolution:=optional,${jahia.plugin.projectPackageImport},*</Import-Package>
             <Jahia-Depends>default,contentRetrieval,tabularList,grid,search,skins,default-skins,channels</Jahia-Depends>
+            <Jahia-Signature>MCwCFBHF+uEN/V/K+pb9B/zDUf0oCB2sAhQJuyheIdboefsft/I++US0Butnww==</Jahia-Signature>
           </instructions>
         </configuration>
       </plugin>
