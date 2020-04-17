@@ -7,7 +7,7 @@
 
                                     http://www.jahia.com
 
-        Copyright (C) 2002-2019 Jahia Solutions Group SA. All rights reserved.
+        Copyright (C) 2002-2020 Jahia Solutions Group SA. All rights reserved.
 
         THIS FILE IS AVAILABLE UNDER TWO DIFFERENT LICENSES:
         1/GPL OR 2/JSEL
@@ -63,6 +63,11 @@
     <url>scm:git:git@github.com:Jahia/JahiApp-Wiki.git</url>
     <tag>HEAD</tag>
   </scm>
+
+  <properties>
+    <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
+    <jahia-module-signature>MC0CFQCWeFVYW7Zo5NEOnrxMbVzjzWXrngIUBKoYCeDSxofVMotyZyNxz7A5iec=</jahia-module-signature>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>org.xwiki.platform</groupId>
@@ -209,7 +214,6 @@
           <instructions>
             <Import-Package>junit.framework;resolution:=optional,${jahia.plugin.projectPackageImport},*</Import-Package>
             <Jahia-Depends>default,contentRetrieval,tabularList,grid,search,skins,default-skins,channels</Jahia-Depends>
-            <Jahia-Signature>MCwCFBHF+uEN/V/K+pb9B/zDUf0oCB2sAhQJuyheIdboefsft/I++US0Butnww==</Jahia-Signature>
           </instructions>
         </configuration>
       </plugin>
