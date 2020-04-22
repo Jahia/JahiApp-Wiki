@@ -7,7 +7,7 @@
 
                                     http://www.jahia.com
 
-        Copyright (C) 2002-2019 Jahia Solutions Group SA. All rights reserved.
+        Copyright (C) 2002-2020 Jahia Solutions Group SA. All rights reserved.
 
         THIS FILE IS AVAILABLE UNDER TWO DIFFERENT LICENSES:
         1/GPL OR 2/JSEL
@@ -28,7 +28,7 @@
         GNU General Public License for more details.
 
         You should have received a copy of the GNU General Public License
-        along with this program. If not, see <http://www.gnu.org/licenses />.
+        along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
         2/ JSEL - Commercial and Supported Versions of the program
@@ -65,6 +65,7 @@
   </scm>
   <properties>
     <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
+    <jahia-module-signature>MC0CFQCWeFVYW7Zo5NEOnrxMbVzjzWXrngIUBKoYCeDSxofVMotyZyNxz7A5iec=</jahia-module-signature>
   </properties>
   <dependencies>
     <dependency>
@@ -212,7 +213,6 @@
           <instructions>
             <Import-Package>junit.framework;resolution:=optional,${jahia.plugin.projectPackageImport},*</Import-Package>
             <Jahia-Depends>default,contentRetrieval,tabularList,grid,search,skins,default-skins,channels</Jahia-Depends>
-            <Jahia-Signature>MCwCFBHF+uEN/V/K+pb9B/zDUf0oCB2sAhQJuyheIdboefsft/I++US0Butnww==</Jahia-Signature>
           </instructions>
         </configuration>
       </plugin>
